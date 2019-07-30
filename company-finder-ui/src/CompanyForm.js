@@ -6,7 +6,9 @@ export default function CompanyForm(props) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const results = await axios.get(`http://localhost:3001/lookup?q=${query}`);
+    const results = await axios.get(
+      `http://company-finder-api:3001/lookup?q=${query}`
+    );
     props.onSubmit(results.data);
   };
 

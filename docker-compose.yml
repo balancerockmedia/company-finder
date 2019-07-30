@@ -1,0 +1,19 @@
+version: "3"
+services:
+  clearbit-service:
+    build: "./clearbit-service"
+    ports:
+      - "3002:3002"
+  company-finder-api:
+    build: "./company-finder-api"
+    ports:
+      - "3001:3001"
+    depends_on:
+      - clearbit-service
+  company-finder-ui:
+    build: "./company-finder-ui"
+    ports:
+      - "3000:80"
+    depends_on:
+      - clearbit-service
+      - company-finder-api

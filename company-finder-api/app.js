@@ -7,7 +7,7 @@ const port = 3001;
 app.use(cors());
 
 function getResults(q) {
-  return axios.get(`http://localhost:3002/autocomplete?q=${q}`);
+  return axios.get(`http://clearbit-service:3002/autocomplete?q=${q}`);
 }
 
 app.get("/lookup", async (req, res) => {
